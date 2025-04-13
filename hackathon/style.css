@@ -1,0 +1,211 @@
+/* Reset & Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-color: #f8fafc;
+    color: #111827;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f2937;
+    padding: 15px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  .logg{
+    text-decoration: none;
+    color: navy;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  
+  .nav-links a {
+    color: #f9fafb;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #eab308;
+  }
+  
+  .login-btn {
+    background-color: #eab308;
+    border: none;
+    padding: 10px 20px;
+    color: #1f2937;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-btn:hover {
+    background-color: #facc15;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    position: relative;
+  }
+  
+  .hero-img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+  
+  .hero-text {
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    color: #fff;
+    animation: fadeInUp 2s ease-out forwards;
+  }
+  
+  .hero-text h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-text p {
+    font-size: 22px;
+  }
+  
+  /* About Section */
+  .about-section {
+    padding: 70px 50px;
+    background-color: #f3f4f6;
+    text-align: center;
+  }
+  
+  .about-section h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+  }
+  
+  .about-section p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  /* Law Data Section */
+  .law-data {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 50px;
+    gap: 30px;
+    background-color: #fff;
+  }
+  
+  .law-card {
+    background-color: #f9fafb;
+    padding: 25px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  
+  .law-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .law-card h3 {
+    margin-bottom: 10px;
+    color: #111827;
+  }
+  
+  .law-card p {
+    color: #374151;
+    font-size: 16px;
+  }
+  
+  /* Hiring Lawyer Section */
+  .hiring-section {
+    text-align: center;
+    padding: 70px 50px;
+    background-color: #f3f4f6;
+  }
+  
+  .hiring-section h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+  }
+  
+  .hiring-section p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+  
+  .hire-btn {
+    background-color: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 14px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .hire-btn:hover {
+    background-color: #3b82f6;
+  }
+  
+  /* Fixed Help Desk Button */
+  .help-desk {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .help-desk button {
+    background-color: #16a34a;
+    color: #fff;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .help-desk button:hover {
+    background-color: #22c55e;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #1f2937;
+    color: #f9fafb;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px);}
+    100% { opacity: 1; transform: translateY(0);}
+  }
+  

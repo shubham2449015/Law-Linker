@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Subscription</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #000000; color: white; }
+    .card:hover { transform: scale(1.05); transition: all 0.3s ease-in-out; }
+    .fancy { color: #FFD700; font-weight: bold; }
+  </style>
+  <script>
+    function goToPayment(plan, price) {
+      document.getElementById('subscriptionSection').style.display = 'none';
+      const paymentSection = document.getElementById('paymentSection');
+      paymentSection.style.display = 'block';
+      document.getElementById('selectedPlan').textContent = plan;
+      document.getElementById('selectedPrice').textContent = price;
+    }
+  </script>
+</head>
+<body class="min-h-screen px-4 py-10">
+  <!-- Subscription Section -->
+  <div id="subscriptionSection">
+    <h1 class="text-4xl font-bold mb-10 text-center">Choose Your Premium Plan</h1>
+    <div class="grid md:grid-cols-3 gap-8 w-full max-w-6xl mx-auto">
+
+      <!-- Basic Plan -->
+      <div class="card bg-gray-900 p-6 rounded-2xl shadow-xl text-center">
+        <h2 class="text-2xl font-semibold mb-4">Basic</h2>
+        <p class="text-lg mb-4">₹199 / month OR ₹1999 / year</p>
+        <ul class="mb-6 space-y-2">
+          <li class="fancy">✔ Ad-Free Experience</li>
+          <li class="fancy">✔ Early Access to Features</li>
+          <li class="fancy">✔ Priority Email Support</li>
+        </ul>
+        <button onclick="goToPayment('Basic', '₹199 / month OR ₹1999 / year')" class="bg-yellow-500 text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-600 transition">Buy Now</button>
+      </div>
+
+      <!-- Pro Plan -->
+      <div class="card bg-gray-800 p-6 rounded-2xl shadow-2xl text-center border-2 border-yellow-500">
+        <h2 class="text-2xl font-semibold mb-4">Pro</h2>
+        <p class="text-lg mb-4">₹499 / month OR ₹4999 / year</p>
+        <ul class="mb-6 space-y-2">
+          <li class="fancy">✔ All Basic Features</li>
+          <li class="fancy">✔ 1-on-1 Mentorship</li>
+          <li class="fancy">✔ Premium Chat Support</li>
+        </ul>
+        <button onclick="goToPayment('Pro', '₹499 / month OR ₹4999 / year')" class="bg-yellow-500 text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-600 transition">Buy Now</button>
+      </div>
+
+      <!-- Elite Plan -->
+      <div class="card bg-gray-900 p-6 rounded-2xl shadow-xl text-center">
+        <h2 class="text-2xl font-semibold mb-4">Elite</h2>
+        <p class="text-lg mb-4">₹999 / month OR ₹9999 / year</p>
+        <ul class="mb-6 space-y-2">
+          <li class="fancy">✔ All Pro Features</li>
+          <li class="fancy">✔ Personalized Dashboard</li>
+          <li class="fancy">✔ Lifetime Access Option</li>
+        </ul>
+        <button onclick="goToPayment('Elite', '₹999 / month OR ₹9999 / year')" class="bg-yellow-500 text-black px-6 py-2 rounded-full font-semibold hover:bg-yellow-600 transition">Buy Now</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Payment Section -->
+  <div id="paymentSection" style="display:none;" class="mt-12 max-w-xl mx-auto">
+    <div class="bg-gray-800 p-8 rounded-2xl shadow-lg">
+      <h2 class="text-3xl font-bold mb-6 text-center">Make Payment</h2>
+      <p class="text-lg mb-2">Selected Plan: <span class="text-yellow-400" id="selectedPlan"></span></p>
+      <p class="text-lg mb-6">Price: <span class="text-yellow-400" id="selectedPrice"></span></p>
+      <p class="text-lg mb-2">Bank Name: <span class="text-yellow-400">Bank of Baroda</span></p>
+      <p class="text-lg mb-6">Account No: <span class="text-yellow-400">28288100008647</span></p>
+      <p class="text-lg mb-2">Scan QR Code to Pay:</p>
+      <div class="flex justify-center mb-6">
+        <img src="QR copy.jpeg" alt="QR Code" class="w-60 h-60 border-4 border-yellow-500 rounded-xl">
+      </div>
+      <label class="block mb-4 text-lg">Upload Screenshot of Payment:</label>
+      <input type="file" class="w-full p-2 mb-6 bg-black text-white border border-yellow-500 rounded-lg">
+      <button class="w-full bg-yellow-500 text-black px-6 py-3 rounded-xl font-bold hover:bg-yellow-600 transition">Submit</button>
+    </div>
+  </div>
+</body>
+</html>

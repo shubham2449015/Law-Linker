@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hire a Lawyer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold mb-6 text-center">Hire a Lawyer</h1>
+
+    <!-- Search Bar -->
+    <input id="searchInput" type="text" placeholder="Search by lawyer name..." 
+      class="w-full p-3 mb-6 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400" 
+      onkeyup="filterLawyers()">
+
+    <!-- Lawyers List -->
+    <div id="lawyerList" class="space-y-4">
+
+      <!-- Lawyer Card -->
+      <div class="p-4 bg-white rounded-xl shadow" data-name="Ananya Sharma">
+        <h2 class="text-xl font-semibold">Ananya Sharma</h2>
+        <p>Qualification: LLB - Delhi University</p>
+        <p>Contact: +91 9876543210</p>
+        <p>Domain: Criminal Lawyer</p>
+        <p>Price: ₹5,000/day</p>
+        <button onclick="goToPayment('Ananya Sharma', 5000)" 
+          class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700">
+          Hire
+        </button>
+      </div>
+
+      <!-- Lawyer 2 -->
+      <div class="p-4 bg-white rounded-xl shadow" data-name="Rohit Mehra">
+        <h2 class="text-xl font-semibold">Rohit Mehra</h2>
+        <p>Qualification: LLB - Symbiosis Law School</p>
+        <p>Contact: +91 8765432109</p>
+        <p>Domain: Civil Lawyer</p>
+        <p>Price: ₹4,000/day</p>
+        <button onclick="goToPayment('Rohit Mehra', 4000)" 
+          class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700">
+          Hire
+        </button>
+      </div>
+      <!-- Lawyer 3 -->
+      <div class="p-4 bg-white rounded-xl shadow" data-name="Shobhit Kumar">
+        <h2 class="text-xl font-semibold">Shobhit Kumar</h2>
+        <p>Qualification: LLB - DAV Law School</p>
+        <p>Contact: +91 8765432109</p>
+        <p>Domain: Civil Lawyer</p>
+        <p>Price: ₹2,000/day</p>
+        <button onclick="goToPayment('Rohit Mehra', 4000)" 
+          class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700">
+          Hire
+        </button>
+      </div>
+      <!-- Lawyer 4 -->
+      <div class="p-4 bg-white rounded-xl shadow" data-name="Aisha Jawed">
+        <h2 class="text-xl font-semibold">Aisha Jawed</h2>
+        <p>Qualification: LLB - VJ Law School</p>
+        <p>Contact: +91 87654321788</p>
+        <p>Domain: Criminal Lawyer</p>
+        <p>Price: ₹3,000/day</p>
+        <button onclick="goToPayment('Rohit Mehra', 4000)" 
+          class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700">
+          Hire
+        </button>
+        
+      </div>
+      <!-- Lawyer 5 -->
+      <div class="p-4 bg-white rounded-xl shadow" data-name="Shubham Jha">
+        <h2 class="text-xl font-semibold">Shubham Jha</h2>
+        <p>Qualification: LLB - BDSVM Law School</p>
+        <p>Contact: +91 8765438809</p>
+        <p>Domain: Civil Lawyer</p>
+        <p>Price: ₹1,000/day</p>
+        <button onclick="goToPayment('Rohit Mehra', 4000)" 
+          class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700">
+          Hire
+        </button>
+      </div>
+      <!-- Lawyer 2 -->
+      <div class="p-4 bg-white rounded-xl shadow" data-name="Rohit Mehra">
+        <h2 class="text-xl font-semibold">Rohit Mehra</h2>
+        <p>Qualification: LLB - Symbiosis Law School</p>
+        <p>Contact: +91 8765432109</p>
+        <p>Domain: Civil Lawyer</p>
+        <p>Price: ₹4,000/day</p>
+        <button onclick="goToPayment('Rohit Mehra', 4000)" 
+          class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700">
+          Hire
+        </button>
+      </div>
+      <!-- Lawyer 2 -->
+      <div class="p-4 bg-white rounded-xl shadow" data-name="Rohit Mehra">
+        <h2 class="text-xl font-semibold">Rohit Mehra</h2>
+        <p>Qualification: LLB - Symbiosis Law School</p>
+        <p>Contact: +91 8765432109</p>
+        <p>Domain: Civil Lawyer</p>
+        <p>Price: ₹4,000/day</p>
+        <button onclick="goToPayment('Rohit Mehra', 4000)" 
+          class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700">
+          Hire
+        </button>
+      </div>
+
+      <!-- Add 8 more lawyer cards similarly -->
+
+    </div>
+  </div>
+  <!-- Add this inside <body> but after everything else -->
+<button onclick="window.location.href='add_lawyer.html'"
+class="fixed bottom-6 left-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700">
+<span class="text-2xl font-bold">+</span>
+</button>
+
+
+  <script>
+    function filterLawyers() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('#lawyerList > div');
+
+      cards.forEach(card => {
+        const name = card.getAttribute('data-name').toLowerCase();
+        if (name.includes(input)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function goToPayment(lawyerName, price) {
+      // Redirect to payment page with query params
+      window.location.href = `payment2.html?lawyer=${encodeURIComponent(lawyerName)}&price=${price}`;
+    }
+  </script>
+
+</body>
+</html>

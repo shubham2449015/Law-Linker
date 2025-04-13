@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Lawyer Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+   
+    .submit{
+      border: none;
+      height: 37px;
+      width: 120px;
+      background-color: rgb(101, 43, 43);
+      color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+    }
+    .sub{
+      height:40px ;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    /* button{
+      display: flex;
+      justify-content: center;
+    } */
+     body{
+      background-color: black;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 p-6">
+
+  <div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow">
+    <h1 class="text-2xl font-bold mb-6">Add Lawyer Portfolio</h1>
+
+    <form id="addLawyerForm" enctype="multipart/form-data">
+
+      <label class="block mb-3">Name:
+        <input type="text" name="name" required class="w-full p-2 border border-gray-300 rounded-xl mt-1">
+      </label>
+
+      <label class="block mb-3">Qualification:
+        <input type="text" name="qualification" required class="w-full p-2 border border-gray-300 rounded-xl mt-1">
+      </label>
+
+      <label class="block mb-3">Experience (in years):
+        <input type="number" name="experience" required class="w-full p-2 border border-gray-300 rounded-xl mt-1">
+      </label>
+
+      <label class="block mb-3">Phone Number:
+        <input type="tel" name="phone" required class="w-full p-2 border border-gray-300 rounded-xl mt-1">
+      </label>
+
+      <label class="block mb-3">Amount Charge per Day (₹):
+        <input type="number" name="price" required class="w-full p-2 border border-gray-300 rounded-xl mt-1">
+      </label>
+
+      <label class="block mb-4">Certificates/Degree (PDF/Image):
+        <input type="file" name="certificate" accept=".pdf,.jpg,.jpeg,.png" required 
+          class="w-full border border-gray-300 p-2 rounded-xl mt-1">
+      </label>
+<div class="sub">
+     <button class="submit">submit</button>
+    </div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('addLawyerForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Lawyer Portfolio Submitted Successfully!');
+      window.location.href = 'index.html'; // Redirect back to main page after submission
+    });
+  </script>
+
+</body>
+</html>
